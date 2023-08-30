@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="w3-container w3-padding">
+  <br />
+  <ul class="w3-ul w3-border w3-hoverable w3-theme-kv1 w3-card-4" >
+    <li><h2>Nombre total de publication: {{count}}</h2></li>
+    {% for title in all_titles[:100] %}
+    <li><a href="/details?title={{title[1]}}">{{title[0]}} --- {{title[1]}} --- {{title[2][:2]}}</a></li>
+    {% endfor %}
+  </ul>
+  <br />
+</div>
+{% endblock %}

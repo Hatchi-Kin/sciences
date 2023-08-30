@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="w3-container w3-padding">
+  <br />
+  <ul class="w3-ul w3-border w3-hoverable w3-theme-kv1 w3-card-4">
+    <li class="w3-border"><h2>{{document_clicked['title']}}</h2></li>
+    <li>year: {{document_clicked['year']}}</li>
+    <li>authors: {{document_clicked['authors']}}</li>
+    <li>bokktitle: {{document_clicked['booktitle']}}</li>
+    <li>pages: {{document_clicked['pages']}}</li>
+    <li>type: {{document_clicked['type']}}</li>
+    <li>url: {{document_clicked['url']}}</li>
+
+  </ul>
+  <br />
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="w3-card-4">
+    <div class="w3-container w3-brown">
+      <h2>Ajouter une nouvelle publication dans la base de donnée.</h2>
+      <p>C'est du MongoDb, donc tu peux juste faire un tas, là, ça va fonctionner...</p>
+    </div>
+    <form class="w3-container" action="{{ url_for('add_pub_to_auth') }}" method="POST">
+
+      <p>      
+      <label class="w3-text-black"><b>Titre de la publication</b></label>
+      <input class="w3-input w3-border w3-sand" name="title" type="text"></p>
+
+      <p>      
+      <label class="w3-text-black"><b>Auteur</b></label>
+      <input class="w3-input w3-border w3-sand" name="author" type="text"></p>
+
+      <p>      
+      <label class="w3-text-black"><b>Année de publication</b></label>
+      <input class="w3-input w3-border w3-sand" name="year" type="text"></p>
+
+      <p>
+      <button class="w3-btn w3-theme-kv2" type="submit">Enregistrer</button></p>
+    </form>
+  </div>
+  {% if success %}
+  <div class="w3-ul w3-border w3-hoverable w3-theme-kv1 w3-card-4">La publication a bien été ajoutée avec l'id: {{ success }}</div>
+  {% endif %}
+
+
+  {% endblock %}

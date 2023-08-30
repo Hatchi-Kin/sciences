@@ -22,7 +22,9 @@ sciences
         └── sorted_by_date.html
 ###########################################################
 
-dans le dossier racine du projet, ouvrir un terminal:
+dans le dossier racine du projet, dezipper dblp.zip (pas réussi à upload un json de 35mb sit github wth)
+
+ouvrir un terminal:
 docker-compose up --build -d
 
 puis copier l'id du container de mongodb:

@@ -24,7 +24,7 @@ sciences
 
 L'appli doit être entièrement déployable à partir d'un docker-compose. 
 Mais je n'ai pas réussi à créer un docker-compose qui importe le contenu de dlbp.json dans la bdd.
-Donc, il faut construire le container et remplir la dbb "à la main".
+Donc, il faut construire le container puis remplir la dbb "à la main".
 
 dans le dossier racine du projet, dezipper dblp.zip (pas réussi à upload un json de 35mb sur github wth)
 

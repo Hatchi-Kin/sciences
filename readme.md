@@ -26,7 +26,7 @@ sciences
 ## Set-up:
 
 Assurez vous d'avoir un projet avec cette structure.
-(dézippez dblp.json)
+(dézippez dblp.json, j'ai pas réussi à uploader le json de 35mb dans github? wth)
 
 pour contruire et deployer le container, ouvrez un terminal et entrez:
 ```

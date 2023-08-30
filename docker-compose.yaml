@@ -1,23 +1,37 @@
 version: '3.8'
 
 services:
-    flask-app:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      ports:
-        - 5000:5000
-      depends_on:
-        - mongo-db
 
-        
-    mongo-db:
-      image: mongo
-      restart: always
-      environment:
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: pass12345
-      volumes:
-        - ./dblp.json:/dblp.json
-      ports:
-        - 27017:27017
+  mongodb:
+    image: mongo
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongodb-data:/data/db
+      - ./data/dblp.json:/data/db/dblp.json
+    networks:
+      - supernetwork
+
+  flask-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    networks:
+      - supernetwork
+
+networks:
+  supernetwork:
+    name: supernetwork
+
+volumes:
+  mongodb-data:
+    name : mongodb-data

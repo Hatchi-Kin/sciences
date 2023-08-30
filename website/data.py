@@ -44,7 +44,6 @@ class Data:
         return titles_sorted_by_author
 
     
-    
     def get_total_amount_articles(self):
         client = MongoAccess.connexion()
         collection = client["publis"]
@@ -52,7 +51,6 @@ class Data:
         MongoAccess.deconnexion()
         return count
     
-
 
     def get_details_via_title(self, title):
         client = MongoAccess.connexion()
@@ -70,7 +68,6 @@ class Data:
         return documents
     
 
-
     def add_new_publication(self, title, authors, year):
         client = MongoAccess.connexion()
         collection = client["publis"]
@@ -78,18 +75,4 @@ class Data:
         result = collection.insert_one(document)
         MongoAccess.deconnexion()
         return result.inserted_id
-
-
-
-
-
-
-
-
-# data = Data()
-# all_titles = data.get_all_articles_by_author("Matthew W. Crocker")
-# for t in all_titles:
-#     print(t)
-
-
 

@@ -23,29 +23,14 @@ sciences
         └── sorted_by_date.html
 ```
 
-## Instructions:
-L'appli doit être entièrement déployable à partir d'un docker-compose. 
-Mais je n'ai pas réussi à créer un docker-compose qui importe le contenu de dlbp.json dans la bdd.
-Donc, il faut construire le container puis remplir la dbb "à la main".
+## Set-up:
 
-dans le dossier racine du projet, dezipper dblp.zip (pas réussi à upload un json de 35mb sur github wth)
+Assurez vous d'avoir un projet avec cette structure.
+(dézippez dblp.json)
 
-ouvrir un terminal:
+pour contruire et deployer le container, ouvrez un terminal et entrez:
 ```
 docker-compose up --build -d
 ```
-puis copier l'id du container de mongodb:
-```
-docker ps
-```
-puis coller l'id dans:
-```
-docker cp dblp.json < id du container de mongodb >:/
-```
-puis:
-```
-mongoimport --db=DBLP --collection=publis --file=dblp.json -u root --host=localhost --port=27017 --authenticationDatabase admin
-```
-entrer le password pass12345
+puis rendez-vous sur http://127.0.0.1:5000/
 
-et enfin aller sur http://127.0.0.1:5000/

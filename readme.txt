@@ -22,7 +22,7 @@ sciences
         └── sorted_by_date.html
 ###########################################################
 
-dans le dossier racine du projet, dezipper dblp.zip (pas réussi à upload un json de 35mb sit github wth)
+dans le dossier racine du projet, dezipper dblp.zip (pas réussi à upload un json de 35mb sur github wth)
 
 ouvrir un terminal:
 docker-compose up --build -d
